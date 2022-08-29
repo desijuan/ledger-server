@@ -22,10 +22,10 @@ const getGroup = async (req, res, next) => {
 
 const newExpense = async (req, res) => {
   const groupID = req.params.id;
-  const expense = req.body;
+  const newExpense = req.body;
   const group = await Group.findByIdAndUpdate(
     groupID,
-    { $push: { expenses: expense } },
+    { $push: { expenses: newExpense } },
     { runValidators: true }
   );
   if (!group) {
