@@ -1,28 +1,28 @@
-const mongoose = require("mongoose");
-const EntrySchema = require('./EntrySchema')
+const mongoose = require('mongoose');
+const ExpenseSchema = require('./ExpenseSchema');
 
 const GroupSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
     trim: true,
-    maxlength: 20
+    maxlength: 20,
   },
   description: {
     type: String,
-    maxlength: 300
+    maxlength: 300,
   },
   participants: {
     type: Array,
-    required: true
+    required: true,
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
-  ledger: {
-    type: [EntrySchema],
-    default: []
+  expenses: {
+    type: [ExpenseSchema],
+    default: [],
   },
 });
 
