@@ -26,7 +26,6 @@ const ExpenseSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    reuired: true,
     default: Date.now,
   },
 });
