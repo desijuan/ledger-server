@@ -22,17 +22,16 @@ const getGroup = async (req, res, next) => {
 
 const newExpense = async (req, res) => {
   const groupID = req.params.id;
-  const newExpense = req.body;
-  console.log(newExpense);
+  const expense = req.body;
   const group = await Group.findByIdAndUpdate(
     groupID,
-    { $push: { expenses: newExpense } },
+    { $push: { expenses: expense } },
     { runValidators: true }
   );
   if (!group) {
     throw new CustomAPIError(`No group with id ${groupID}`, 404);
   }
-  res.status(200).json(newExpense);
+  res.status(200).json(expense);
 };
 
 module.exports = {
