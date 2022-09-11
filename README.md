@@ -1,5 +1,7 @@
 # Ledger
 
-Ledger is a nodejs app to track expenses of groups of friends.
+Node.js app to track expenses of groups of persons.
 
-This is the server. It consists of en Express application that connects to a MongoDB database in the cloud.
+## Server
+
+This is the server.
